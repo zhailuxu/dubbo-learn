@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+	<dubbo:application name="dubboConsumer" />
+
+	<!-- 使用multicast广播注册中心暴露发现服务地址 -->
+	<dubbo:registry protocol="zookeeper" address="zookeeper://127.0.0.1:2181" />
+    
+    <!-- 启动monitor-->
+	<dubbo:monitor protocol="registry" />
+
+	<!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
+	<dubbo:reference id="userService" interface="com.test.UserServiceBo"
+		group="dubbo" version="1.0.0" timeout="3000" />
+
+</beans>

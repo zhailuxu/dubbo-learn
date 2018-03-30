@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.alibaba</groupId>
+	<artifactId>dubbo.learn</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>dubbo.learn</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<dubbo.version>2.5.10</dubbo.version>
+		<spring.version>5.0.3.RELEASE</spring.version>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>${dubbo.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.adyliu</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+
+	</dependencies>
+
+	<modules>
+		<module>Consumer</module>
+		<module>Provider</module>
+		<module>Sdk</module>
+	</modules>
+
+</project>
